@@ -18,7 +18,7 @@ const static char* Fruit1 = "Fruit1";
 const static char* Wall = "Wall";
 const static char* Empty = "Empty";
 int score = 0;
-int level = 1;
+//int level = 1;
 
 
 Arena::Arena(unsigned int _w, unsigned int _h)
@@ -169,25 +169,25 @@ void Arena::update(float _dt)
 
 		if (dir.x != 0 && dir.x < 2) // ROTATE PERSON TO WHEN CLICK LEFT BUTTON
 		{
-			std::cout << dir.x << "L dirX \n";
+			std::cout << dir.x << " L dirX \n";
 			p->rY = 90;
 		}
 
 		if (dir.x != 0 && dir.x > 2) // ROTATE PERSON TO WHEN CLICK RIGHT BUTTON
 		{
-			std::cout << dir.x << "R dirX \n";
+			std::cout << dir.x << " R dirX \n";
 			p->rY = -90;
 		}
 
 		if (dir.y != 0 && dir.y > 2)
 		{
-			std::cout << dir.x << "BACK dirY \n"; // ROTATE PERSON TO WHEN CLICK BOTTOM BUTTON
+			std::cout << dir.x << " BACK dirY \n"; // ROTATE PERSON TO WHEN CLICK BOTTOM BUTTON
 			p->rY = 180;
 		}
 
 		if (dir.y != 0 && dir.y < 2)
 		{
-			std::cout << dir.x << "GO dirY \n"; // ROTATE PERSON TO WHEN CLICK UP BUTTON
+			std::cout << dir.x << " GO dirY \n"; // ROTATE PERSON TO WHEN CLICK UP BUTTON
 			p->rY = 0;
 		}
 
@@ -255,14 +255,14 @@ void Arena::update(float _dt)
 
 		if (dir.x != 0 && getItem(pos.x + dir.x, pos.y + dir.y) == ItemType::Wall)
 		{
-			std::cout << "Player Hit Wall X \n";
-			
+			std::cout << "Hit Wall X \n";
+			return;
 		}
 
 		if (dir.y != 0 && getItem(pos.x + dir.x, pos.y + dir.y) == ItemType::Wall)
 		{
-			std::cout << "HIT WALL Y \n";
-			
+			std::cout << "Hit Wall Y \n";
+			return;
 		}
 
 
@@ -302,29 +302,6 @@ void Arena::update(float _dt)
 		}*/
 		
 		
-
-		
-
-		if (score==2)
-		{
-			std::cout << "test ";
-			int maps = rand()%2;
-			switch (maps)
-			{
-			case 0:
-				std::cout << "1 \n";
-				break;
-			case 1:
-				std::cout << "2 \n";
-				break;
-			default:
-				std::cout << "default";
-				break;
-			}
-			return;
-		}
-
-
 		//LEVEL 2
 		if (score == 8)
 		{	
@@ -365,46 +342,13 @@ void Arena::update(float _dt)
 		}
 
 		//LEVEL 3
-		if (score == 13)
+		if (score == 17)
 		{
-			level++;
-			std::cout << "LEVEL" << level << "\n";
-			ngl::Image img("maps/map3.png"); //for Wall
-			m_width = img.width();
-			m_height = img.height();
-			m_items.resize(m_width*m_height);
-			//createDefaultObjects();
-			for (unsigned int y = 0; y < m_height; ++y)
-			{
-				for (unsigned int x = 0; x < m_width; ++x)
-				{
-					if (img.getColour(x, y) == ngl::Vec4::zero())
-					{
-						setItem(x, y, ItemType::Wall, m_objects[Wall]);
-					}
-					else
-					{
-						setItem(x, y, ItemType::Empty, m_objects[Empty]);
-					}
-				}
-			}
+			std::cout << "YOU WIN \n";
 
-			ngl::Image img2("maps/fruit3.png"); //for Fruit
-			m_width = img2.width();
-			m_height = img2.height();
-			m_items2.resize(m_width*m_height);
-			for (unsigned int y = 0; y < m_height; ++y)
-			{
-				for (unsigned int x = 0; x < m_width; ++x)
-				{
-					if (img2.getColour(x, y) == ngl::Vec4::zero())
-					{
-						setItem(x, y, ItemType::Fruit, m_objects[Fruit1]);
-					}
-				}
-			}
-			
 		}
+
+
 			
 
 	}
