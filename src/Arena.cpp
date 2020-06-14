@@ -255,7 +255,7 @@ void Arena::update(float _dt)
 
 		if (dir.x != 0 && getItem(pos.x + dir.x, pos.y + dir.y) == ItemType::Wall)
 		{
-			std::cout << "HITZZZ WALL X \n";
+			std::cout << "Player Hit Wall X \n";
 			
 		}
 
