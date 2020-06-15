@@ -436,7 +436,7 @@ void Arena::update(float _dt)
 		//GAME WIN
 		if (fruits ==100)
 		{
-			std::cout << "YOU WIN \n";
+			std::cout << "CONGRATULATIONS YOU WIN !!!!! \n";
 			std::cout << "\n";
 			std::cout << "Please press ESCAPE to Quit The Game \n";
 			setItem(pos.x, pos.y, ItemType::Empty, m_objects[Player1]);
