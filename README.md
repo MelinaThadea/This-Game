@@ -2,6 +2,9 @@ IMPORTANT NOTE: Please run the program with Release instead of Debug.
 
 APPLICATION REPORT 
 
+
+
+
 INTRODUCTION-------------------------------------------------------------------------------------------------
 
 This document is an application report for the project ‘Gather the Fruits Game’. It contains the descriptions of components that make up the game such as the ideas, the structure, and the algorithm. This project is created as a Programming Project for Computing for Graphics and Animation Level 5.
@@ -12,6 +15,13 @@ To enable the troll to walk, the troll is controlled by SDL which allows the UP,
 This program is based on the concept of Object-Oriented Design, which is a planning design which is defined by interaction of objects within it. Object Oriented Design breaks down structure into classes. The techniques used in this paradigm are mostly involve writing in structure classes such as: sequencing - where code are executed per line; iteration - such as for and while ; and conditional - such as if, else, case. Object-Oriented concept proves to be effective for this project because it has the benefit to be detailed and easy to modify.
 This program then implements the Object-Oriented Concept and render them into 3D Projection, by using NGL. NGL is a library which implements 2D concept into 3D Projection without the complexity of writing our own 3D Render Algorithms. 
 
+
+
+
+
+
+
+
 IMPLEMENTATION--------------------------------------------------------------------------------------------------
 
 As mentioned previously, the source code of this program is based on Game Repository which is a base of game with function like walking and collision detection, which then modified and developed into a Maze Collecting game. Below are problems and solutions found in modifying and developing the game base.
@@ -20,6 +30,10 @@ Secondly, to create different environment for different levels. Since the game b
 Thirdly, to rotate the player hence he can face wherever he is going to. To solve this, I modify the setRotation function in the Player draw and added a place-holder which can be easily modify in Arena. Then in Arena, under the conditional function whenever the player’s direction is not zero, it will set the rotation according to where the player is directing. For example, if the player is moving to the direction of positive X, the rotation of player is set to 90, whilst when the player is moving to the direction of negative X, the rotation is set to -90. 
 The fourth challenge is to readjust 3D rendered elements to make them more appealing. To do this, I added setScale function to the draw class of each elements. In addition, I also had to adjust the position of the Y-axis of each element so they all still in the same level.
 The fifth challenge is to add Win or Lose function. The challenging part to add a function where the game does not quit but the player will know that he loses. Hence, I created a function to make the Player disappear if he wins or loses. This then put into a conditional function where to Win the Player needs to gather 100 fruits with 100 steps, while to Lose the Player needs to lose 100 steps. As a bonus, each level the first fruit adds extra steps to help the Player wins. 
+
+
+
+
 
 END RESULT--------------------------------------------------------------------------------------------------------
 
