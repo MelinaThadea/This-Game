@@ -62,6 +62,9 @@
     <ClInclude Include="include\Vec2.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\UILabel.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="moc\moc_predefs.h.cbt">

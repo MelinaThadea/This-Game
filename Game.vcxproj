@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{4220B2BB-EBEF-3EC1-9096-1A2A1379AD17}</ProjectGuid>
+    <ProjectGuid>{534585FD-CEAE-3B68-8064-679C8590DED8}</ProjectGuid>
     <RootNamespace>Game</RootNamespace>
     <Keyword>QtVS_v302</Keyword>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
@@ -78,7 +78,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>.\GeneratedFiles\$(ConfigurationName);.\GeneratedFiles;.;C:\Users\asus\vcpkg\installed\x64-windows\include\SDL2;include;/public/devel/include;$(HOMEDRIVE)$(HOMEPATH)\NGL/include/;$(HOMEDRIVE)$(HOMEPATH)\NGL/gl3w/;C:\Users\asus\vcpkg\installed\x86-windows\include;C:\Users\asus\vcpkg\installed\x64-windows\include;moc;/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\asus\Game\SDL2_ttf-2.0.15\include;.\GeneratedFiles\$(ConfigurationName);.\GeneratedFiles;.;C:\Users\asus\vcpkg\installed\x64-windows\include\SDL2;include;/public/devel/include;$(HOMEDRIVE)$(HOMEPATH)\NGL/include/;$(HOMEDRIVE)$(HOMEPATH)\NGL/gl3w/;C:\Users\asus\vcpkg\installed\x86-windows\include;C:\Users\asus\vcpkg\installed\x64-windows\include;moc;/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding -Zc:__cplusplus -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
       <AssemblerListingLocation>obj\</AssemblerListingLocation>
       <BrowseInformation>false</BrowseInformation>
@@ -98,8 +98,8 @@
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>C:\Users\asus\vcpkg\installed\x64-windows\lib\SDL2.lib;opengl32.lib;C:\Users\asus\NGL\lib\NGL.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\Users\asus\vcpkg\installed\x64-windows\lib;C:\Users\asus\NGL\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>C:\Users\asus\vcpkg\installed\x64-windows\lib\SDL2.lib;opengl32.lib;C:\Users\asus\NGL\lib\NGL.lib;C:\Users\asus\Game\SDL2_ttf-2.0.15\lib\x64\SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\asus\Game\SDL2_ttf-2.0.15\lib;C:\Users\asus\vcpkg\installed\x64-windows\lib;C:\Users\asus\NGL\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
       <DataExecutionPrevention>true</DataExecutionPrevention>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -175,6 +175,7 @@
     <ClInclude Include="include\GameObject.h" />
     <ClInclude Include="include\Player.h" />
     <ClInclude Include="include\RenderGlobals.h" />
+    <ClInclude Include="include\UILabel.h" />
     <ClInclude Include="include\Vec2.h" />
   </ItemGroup>
   <ItemGroup>

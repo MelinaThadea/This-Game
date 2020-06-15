@@ -13,12 +13,15 @@
 #include <ngl/NGLStream.h>
 
 
+
 SDL_GLContext createOpenGLContext(SDL_Window * _window);
 void setupShaders();
 
 static int WIDTH = 640;
 static int HEIGHT = 360;
 static float ASPECT = static_cast<float>(WIDTH) / HEIGHT;
+
+
 
 int main()
 {
@@ -29,7 +32,7 @@ int main()
 		return EXIT_FAILURE;
 	}
 
-	auto window = SDL_CreateWindow("Game",0, 0, WIDTH, HEIGHT, SDL_WINDOW_OPENGL ); //| SDL_WINDOW_RESIZABLE
+	auto window = SDL_CreateWindow("Gather the Fruit Game",0, 0, WIDTH, HEIGHT, SDL_WINDOW_OPENGL ); //| SDL_WINDOW_RESIZABLE
 
 	auto glContext = createOpenGLContext(window);
 	if (!glContext)
@@ -40,9 +43,9 @@ int main()
 	SDL_GL_MakeCurrent(window, glContext);
 	ngl::NGLInit::instance();
 	setupShaders();
-	glClearColor(1, 1, 1, 1); //BG COLOUR
+	glClearColor(1, 1, 0,0); //BG COLOUR
 	glEnable(GL_DEPTH_TEST);
-	RenderGlobals::setView({ 0.0f, 10.0f,-17.0f }, { 0.0f, 0.0f, 0.0f }, { 0.0f, 0.0f, 1.0f }); //CAM VIEW z is up
+	RenderGlobals::setView({ 0.0f, 20.0f,-17.0f }, { 0.0f, 0.0f, 0.0f }, { 0.0f, 0.0f, 1.0f }); //CAM VIEW z is up
 	RenderGlobals::setProjections(45.0f, ASPECT);
 
 
@@ -56,11 +59,13 @@ int main()
 	int xDir = 0;
 	int yDir = 0;
 
+	
+
 	while (!quit)
 	{
 		while (SDL_PollEvent(&event))
 		{
-			switch (event.type)
+			switch (event.type) // Keyboard Controls
 			{
 			case SDL_QUIT: quit = true; break; //look for the quit button on the window
 			case SDL_KEYDOWN : //if button is pressed
@@ -84,6 +89,7 @@ int main()
 				}
 				break; //end key down
 
+
 			}
 		}// end poll event
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -95,14 +101,14 @@ int main()
 		//std::cout << RenderGlobals::getViewMatrix() << '\n'; //JUST FOR VISUALISATION
 		//std::cout << RenderGlobals::getVPMatrix() << '\n'; //JUST FOR VISUALISATION
 
-		arena.update(0.1f);
+		arena.update(0.5f);
 		//auto shader = ngl::ShaderLib::instance();
 		//shader->setUniform("MV", RenderGlobals::getViewMatrix());
 		//shader->setUniform("MVP", RenderGlobals::getVPMatrix());
 
 		//ngl::VAOPrimitives::instance()->draw("teapot"); //drawing teapot
 		SDL_GL_SwapWindow(window);
-		SDL_Delay(10);
+		SDL_Delay(20);
 	} // end game loop
 
 	return EXIT_SUCCESS;
