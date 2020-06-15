@@ -32,7 +32,7 @@ int main()
 		return EXIT_FAILURE;
 	}
 
-	auto window = SDL_CreateWindow("Gather the Fruit Game",0, 0, WIDTH, HEIGHT, SDL_WINDOW_OPENGL ); //| SDL_WINDOW_RESIZABLE
+	auto window = SDL_CreateWindow("Gather the Fruit Game", 0, 0, WIDTH, HEIGHT, SDL_WINDOW_OPENGL ); //| SDL_WINDOW_RESIZABLE
 
 	auto glContext = createOpenGLContext(window);
 	if (!glContext)

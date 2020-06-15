@@ -166,6 +166,7 @@ void Arena::update(float _dt)
 	{
 
 		//GAME GUIDE
+		std::cout << "\n";
 		std::cout << "THE GAME OBJECTIVE \n";
 		std::cout << "Gather All The Red Fruits in under 100 Steps\n";
 		std::cout << "\n";
@@ -210,25 +211,25 @@ void Arena::update(float _dt)
 
 		if (dir.x != 0 && dir.x < 2) // ROTATE PERSON TO WHEN CLICK LEFT BUTTON
 		{
-			std::cout << dir.x << " L dirX \n";
+			//std::cout << dir.x << " L dirX \n";
 			p->rY = 90;
 		}
 
 		if (dir.x != 0 && dir.x > 2) // ROTATE PERSON TO WHEN CLICK RIGHT BUTTON
 		{
-			std::cout << dir.x << " R dirX \n";
+			//std::cout << dir.x << " R dirX \n";
 			p->rY = -90;
 		}
 
 		if (dir.y != 0 && dir.y > 2)
 		{
-			std::cout << dir.x << " BACK dirY \n"; // ROTATE PERSON TO WHEN CLICK BOTTOM BUTTON
+			//std::cout << dir.x << " BACK dirY \n"; // ROTATE PERSON TO WHEN CLICK BOTTOM BUTTON
 			p->rY = 180;
 		}
 
 		if (dir.y != 0 && dir.y < 2)
 		{
-			std::cout << dir.x << " GO dirY \n"; // ROTATE PERSON TO WHEN CLICK UP BUTTON
+			//std::cout << dir.x << " GO dirY \n"; // ROTATE PERSON TO WHEN CLICK UP BUTTON
 			p->rY = 0;
 		}
 
