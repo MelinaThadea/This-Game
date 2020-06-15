@@ -301,17 +301,6 @@ void Arena::update(float _dt)
 			newPos.y = pos.y + dir.y;
 		}
 
-		if (dir.x != 0 && getItem(pos.x + dir.x, pos.y + dir.y) == ItemType::Wall)
-		{
-			std::cout << "Hit Wall X \n";
-		}
-
-		if (dir.y != 0 && getItem(pos.x + dir.x, pos.y + dir.y) == ItemType::Wall)
-		{
-			std::cout << "Hit Wall Y \n";
-
-		}
-
 
 		p->setPos(newPos);
 
